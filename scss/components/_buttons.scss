@@ -1,0 +1,50 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+.btn-rounded {
+  position: relative;
+  padding: 0.9rem 4.3rem 0.9rem 1.25rem;
+  font-weight: 700;
+  margin: 0%;
+  border: 0.1rem solid rgba(white, 0.6);
+  background-color: white;
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: $primary;
+    width: 2.5rem;
+    height: 2.5rem;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    i {
+      color: white;
+    }
+  }
+
+  //Efectos boton telefono
+  &:hover {
+    @include gradient;
+    color: white;
+    span {
+      background-color: rgba($black, 0.6);
+    }
+  }
+
+  //Eliminar el boton con el numero de telefono
+  @include media-breakpoint-down(sm) {
+    //No mostrar el boton en equipos "sm"
+    display: none;
+  }
+  @include media-breakpoint-down(md) {
+    //No mostrar el boton en equipos "md" segun breakpoints de boostrap
+    display: none;
+  }
+  @include media-breakpoint-down(lg) {
+    //No mostrar el boton en equipos "lg" segun breakpoints de boostrap
+    display: none;
+  }
+}

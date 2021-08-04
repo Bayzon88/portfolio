@@ -1,0 +1,15 @@
+//@use se utiliza para linkear las variables
+//del archivo custom con este archivo
+@use '../components/mixins' as *;
+
+.menu {
+  @include gradient;
+  li {
+    padding: 0 0.7rem;
+    a {
+      color: white;
+      text-transform: capitalize;
+      font-weight: 600;
+    }
+  }
+}
